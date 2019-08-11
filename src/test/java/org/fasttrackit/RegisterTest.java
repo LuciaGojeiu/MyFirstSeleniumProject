@@ -1,4 +1,4 @@
-package org.fasttrackit;
+  package org.fasttrackit;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -25,7 +25,6 @@ public class RegisterTest {
         driver.findElement(By.name("password")).sendKeys("123abc");
         driver.findElement(By.name("confirmation")).sendKeys("123abc");
         driver.findElement(By.name("is_subscribed")).click();
-
         driver.quit();
 
     }

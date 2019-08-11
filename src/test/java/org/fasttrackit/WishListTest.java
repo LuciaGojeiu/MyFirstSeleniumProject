@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WishListTest {
     @Test
-    public void validLoginTest() {
+    public void wishListTest() {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://fasttrackit.org/selenium-test/");

@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginTest {
+
+
     @Test
     public void validLoginTest(){
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
@@ -26,7 +28,7 @@ public class LoginTest {
 
         driver.findElement(By.cssSelector("#send2")).click();
 
-        driver.quit();
+
     }
     @Test
     public void invalidEmailLoginTest(){
