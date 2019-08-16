@@ -10,17 +10,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class SearchTest {
+public class CheckoutTest {
     WebDriver driver;
     @Before
     public void initDriver(){
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
     }
    @Test
-    public void searchValidTest() {
+    public void checkoutTest() {
         driver.get("https://fasttrackit.org/selenium-test/");
-        driver.findElement(By.id("search")).sendKeys("sunglasses");
+        driver.findElement(By.id("search")).sendKeys("EYEGLASSES");
         driver.findElement(By.cssSelector(".button.search-button")).click();
         Assert.assertTrue(driver.findElement(By.cssSelector(".toolbar .sorter .sort-by label")).isDisplayed());
         driver.findElement(By.cssSelector(".actions .button.btn-cart")).click();
@@ -44,6 +45,11 @@ public class SearchTest {
         driver.findElement(By.id("billing:telephone")).sendKeys("12345678");
         driver.findElement(By.id("billing:use_for_shipping_yes")).click();
         driver.findElement(By.cssSelector("#billing-buttons-container .button")).click();
+        driver.findElement(By.id("s_method_flatrate_flatrate")).click();
+        driver.findElement(By.cssSelector("#shipping-method-buttons-container .button")).click();
+        driver.findElement(By.cssSelector("#payment-buttons-container .button")).click();
+        driver.findElement(By.cssSelector("#review-buttons-container .button.btn-checkout")).click();
+        Assert.assertEquals("YOUR ORDER HAS BEEN RECEIVED.",driver.findElement(By.cssSelector("#.col-main >.page-title > h1")).getText());
 
    }
     @After
