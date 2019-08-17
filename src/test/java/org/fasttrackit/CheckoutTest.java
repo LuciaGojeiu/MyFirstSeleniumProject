@@ -45,7 +45,7 @@ public class CheckoutTest {
         driver.findElement(By.id("billing:telephone")).sendKeys("12345678");
         driver.findElement(By.id("billing:use_for_shipping_yes")).click();
         driver.findElement(By.cssSelector("#billing-buttons-container .button")).click();
-        driver.findElement(By.id("s_method_flatrate_flatrate")).click();
+        driver.findElement(By.cssSelector("#s_method_flatrate_flatrate")).click();
         driver.findElement(By.cssSelector("#shipping-method-buttons-container .button")).click();
         driver.findElement(By.cssSelector("#payment-buttons-container .button")).click();
         driver.findElement(By.cssSelector("#review-buttons-container .button.btn-checkout")).click();
